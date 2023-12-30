@@ -1,0 +1,265 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+#center {
+    width: 100%;
+    height: 100%;
+    background: url("../image/galaxy_bg.png") no-repeat;
+    background-size: 100% 100%;
+    min-width: 1300px;
+    min-height: 840px;
+}
+.logo-container {
+    width: 1050px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.onekey {
+    width: 96px;
+    height: 40px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.logo img {
+    width: 258px;
+    height: 40px;
+}
+.back-btn {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.back-btn img {
+    width: 18px;
+    height: 18px;
+}
+.galaxy-container {
+    width: 100%;
+    height: 715px;
+    position: relative;
+}
+.galaxy-container-new1 {
+    display: none;
+}
+.galaxy-container img {
+    width: 100%;
+    height: 100%;
+}
+.rotate{
+    position: absolute;
+    transform: rotate(12deg) translateX(-50%);
+    cursor: pointer;
+}
+.track {
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.4);
+}
+.img-title {
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+}
+.sun {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 80px;
+    height: 80px;
+}
+.sun .img-title {
+    bottom: -24px;
+    left: 26%;
+    position: absolute;
+}
+.mercury {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 184px;
+    height: 74px;
+}
+.mercury .img-title {
+    position: absolute;
+    bottom: -14px;
+    left: -14px;
+}
+.mercury-img {
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    left: -29px;
+    top: 50%;
+    margin-top: -29px;
+}
+.venus {
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    width: 400px;
+    height: 132px;
+}
+.venus .img-title {
+    position: absolute;
+    left: 18px;
+    top: 74px;
+}
+.venus-img {
+    position: absolute;
+    left: -10px;
+    width: 74px;
+    height: 74px;
+}
+.earth {
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    width: 523px;
+    height: 175px;
+}
+.earth .img-title {
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
+}
+.earth-img {
+    position: absolute;
+    right: -12px;
+    bottom: 0;
+    width: 94px;
+    height: 94px;
+}
+.mars {
+    position: absolute;
+    left: 50%;
+    top: 41%;
+    width: 665px;
+    height: 237px;
+}
+.mars .img-title {
+    position: absolute;
+    right: 33%;
+    top: 38px;
+}
+.mars-img {
+    position: absolute;
+    right: 30%;
+    top: -34px;
+    width: 70px;
+    height: 70px;
+}
+.jupiter {
+    position: absolute;
+    left: 50%;
+    top: 39%;
+    width: 735px;
+    height: 282px;
+}
+.jupiter .img-title {
+    position: absolute;
+    left: 46%;
+    bottom: -104px;
+}
+.jupiter-img {
+    position: absolute;
+    right: 40%;
+    bottom: -100px;
+    width: 150px;
+    height: 150px;
+}
+.saturn {
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    width: 878px;
+    height: 325px;
+}
+.saturn .img-title {
+    position: absolute;
+    left: 10%;
+    bottom: -10px;
+}
+.saturn-img {
+    position: absolute;
+    left: -20%;
+    bottom: -92px;
+    width: 260px;
+    height: 195px;
+}
+.uranus {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    width: 1028px;
+    height: 392px;
+}
+.uranus .img-title {
+    position: absolute;
+    left: 12%;
+    top: 110px;
+}
+.uranus-img {
+    position: absolute;
+    left: 70px;
+    width: 138px;
+    height: 138px;
+}
+.neptune {
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    width: 1178px;
+    height: 466px;
+}
+.neptune .img-title {
+    position: absolute;
+    right: 11%;
+    top: 130px;
+}
+.neptune-img {
+    position: absolute;
+    right: 8%;
+    top: 28px;
+    width: 100px;
+    height: 100px;
+}
+.sun_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/sun.gif");
+}
+.mercury_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/mercury.gif");
+}
+.venus_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/venus.gif");
+}
+.earth_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/earth.gif");
+}
+.mars_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/mars.gif");
+}
+.saturn_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/saturn.gif");
+}
+.uranus_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/uranus.gif");
+}
+.neptune_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/neptune.gif");
+}
+/* 补充css代码，实现鼠标在木星图片上悬停时，替换为动态的图片 */
+.jupiter_static:hover{
+    content:url("https://show.ybccode.com/common_static/galaxy/jupiter.gif");
+}

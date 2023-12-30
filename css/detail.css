@@ -1,0 +1,99 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+#center {
+    width: 100%;
+    height: 100%;
+    background: url("../image/galaxy_bg.png") no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    min-height: 800px;
+    min-width: 1300px;
+}
+.logo-container {
+    width: 1000px;
+    padding: 20px 0;
+    text-align: left;
+}
+.logo-container img {
+    width: 258px;
+    height: 40px;
+}
+.intro-container {
+    position: relative;
+    width: 898px;
+    height: 430px;
+    margin: 50px auto 0;
+    background: url("../image/detail_frame.png") no-repeat;
+    background-size: 100% 100%;
+    padding: 110px 58px 0 44px;
+}
+.monkey {
+    position: absolute;
+    right: -50px;
+    bottom: -20px;
+}
+.intro-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+	font-size: 24px;
+    position: absolute;
+    left: 40px;
+    top: 20px;
+}
+.intro-title img {
+    width: 37px;
+    height: 37px;
+}
+.intro-title h1 {
+    margin: 0 0 0 20px;
+    font-weight: 600;
+    font-size: 28px;
+}
+.intro-body {
+    display: flex;
+    justify-content: space-between;
+}
+.intro-star-img {
+    width: 320px;
+}
+.intro-star-img img {
+    width: 100%;
+}
+.intro-text-body {
+    width: 590px;
+}
+.intro-simple {
+    width: 100%;
+    font-size: 17px;
+    text-align: left;
+}
+.intro-top {
+    margin-bottom: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.intro-top-left {
+    width: 45%;
+    margin: 0;
+}
+.intro-top-right {
+    width: 55%;
+    margin: 0;
+}
+.divid {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(270deg, #5A459B -19.67%, #6AD3FF 100%);
+    margin: 20px 0 35px;
+}
+.intro-detail {
+    font-size: 15px;
+    text-align: left;
+    line-height:26px;
+    margin: 0;
+}
