@@ -1,8 +1,282 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<h1>It is a test web.</h1> 
-<!-- <h1>Do a Barrel Roll 鞘翅飞行</h1> 
-<h1>Arcoma Modpack</h1>
-<h1>老马的整合包：https://pan.huang1111.cn/s/4RM33Tg<h1> -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>猎奇</title>
+  <style>
+    /* 全局重置 & 黑色背景 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;   /* 纯黑背景 */
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #ffd966;              /* 主黄色文字，用于点缀 */
+    }
+
+    /* 主容器：手机舒适宽度，居中 */
+    .app {
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+      background-color: transparent;
+      padding: 16px 16px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* --- 广告区域 (ad1.gif) --- */
+    .ad-container {
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 3px solid #ffd966;       /* 黄色边框醒目 */
+      box-shadow: 0 8px 0 #664d00;
+      background-color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .ad-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1000 / 630;        /* 保持原始宽高比 1000:630 = 100:63 */
+      object-fit: cover;                /* 确保填满不拉伸变形，可能会裁剪一点点，但手机上看舒服 */
+      background-color: #262626;
+      image-rendering: crisp-edges;
+    }
+
+    /* logo区域 */
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 0;
+    }
+
+    .logo-link {
+      display: inline-block;
+      background-color: #000;
+      border-radius: 12px;
+      padding: 6px 12px;
+      border: 2px solid #ffd966;
+      box-shadow: 0 0 0 1px #000000;
+      transition: transform 0.1s ease;
+      cursor: pointer;
+    }
+
+    .logo-link:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+
+    .logo-img {
+      display: block;
+      width: 100%;
+      max-width: 327px;
+      height: auto;
+      aspect-ratio: 327 / 109;
+      object-fit: contain;
+    }
+
+    /* 页面主标题 */
+    .page-headline {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #ffd966;
+      background: rgba(255, 217, 102, 0.05);
+      padding: 8px 0;
+      border-radius: 60px;
+      border: 1px dashed #ffd96633;
+      margin: 0;
+    }
+
+    /* 视频网格 — 8宫格，两列 */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 12px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    /* 每个视频卡片 */
+    .video-card {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      background-color: transparent;
+      border-radius: 24px;
+      transition: transform 0.15s;
+    }
+
+    .video-card:active {
+      transform: scale(0.97);
+    }
+
+    /* 封面链接 */
+    .cover-link {
+      display: block;
+      border-radius: 22px;
+      overflow: hidden;
+      background-color: #1a1a1a;
+      border: 3px solid #ffd966;
+      box-shadow: 0 8px 0 #664d00;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .cover-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background-color: #262626;
+      image-rendering: crisp-edges;
+    }
+
+    /* 视频标题 (每段视频独有的标题) */
+    .video-title {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #ffd966;
+      background: #0d0d0d;
+      padding: 6px 6px;
+      margin-top: 8px;
+      border-radius: 40px;
+      border: 1px solid #ffd96655;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    /* 底部脚注 */
+    .footer-note {
+      margin-top: 18px;
+      border-top: 2px solid #ffd96622;
+      padding-top: 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #ffd96699;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- 1. 广告区域：photo/ad1.gif (1000x630) -->
+    <div class="ad-container">
+      <img src="photo/ad1.gif" alt="广告" class="ad-image" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221000%22%20height%3D%22630%22%20viewBox%3D%220%200%201000%20630%22%3E%3Crect%20width%3D%221000%22%20height%3D%22630%22%20fill%3D%22%23333333%22%2F%3E%3Ctext%20x%3D%22120%22%20y%3D%22350%22%20fill%3D%22%23ffd966%22%20font-size%3D%2270%22%3EAD%20PLACEHOLDER%3C%2Ftext%3E%3C%2Fsvg%3E';">
+    </div>
+
+    <!-- 2. Logo 区域 -->
+    <div class="logo-section">
+      <a href="javascript:window.location.href=window.location.pathname;" class="logo-link" title="刷新页面">
+        <img src="photo/logo.png" alt="站点Logo" class="logo-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22327%22%20height%3D%22109%22%20viewBox%3D%220%200%20327%20109%22%3E%3Crect%20width%3D%22327%22%20height%3D%22109%22%20fill%3D%22%23ffd966%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2270%22%20fill%3D%22%23000%22%20font-size%3D%2236%22%3ELOGO%3C%2Ftext%3E%3C%2Fsvg%3E';">
+      </a>
+    </div>
+
+    <!-- 3. 页面标题 -->
+    <div class="page-headline"></div>
+
+    <!-- 4. 视频网格 (动态生成 8 卡片，带单独标题) -->
+    <div class="video-grid" id="videoGrid"></div>
+
+    <!-- 5. 脚注 -->
+    <div class="footer-note">
+      <span>⬤ 点击任一封面  ▶ 观看惊喜视频</span>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // 目标视频链接（所有封面跳转同一个视频）
+      const VIDEO_LINK = 'https://cdn.mtdv.me/video/rick.mp4';
+      
+      // 8个视频的单独标题 (可以根据喜好修改)
+      const videoTitles = [
+        '标题1',
+        '标题2',
+        '标题3',
+        '标题4',
+        '标题5',
+        '标题6',
+        '标题7',
+        '标题8'
+      ];
+
+      // 封面图片数量
+      const COVER_COUNT = 8;
+      
+      // 获取网格容器
+      const videoGrid = document.getElementById('videoGrid');
+      
+      // 清空网格
+      videoGrid.innerHTML = '';
+
+      // 循环生成 1 到 8 的卡片
+      for (let i = 1; i <= COVER_COUNT; i++) {
+        // 图片路径: photo/1.png ~ photo/8.png
+        const imgSrc = `photo/${i}.png`;
+        // 对应标题 (数组索引从0开始)
+        const title = videoTitles[i-1] || `片源 0${i}`;  // 后备
+
+        // 创建卡片容器
+        const card = document.createElement('div');
+        card.className = 'video-card';
+
+        // 封面链接 —— 直接跳转到视频URL
+        const link = document.createElement('a');
+        link.href = VIDEO_LINK;
+        link.target = '_blank';          // 新标签页打开，方便返回展厅
+        link.className = 'cover-link';
+
+        // 封面图片
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = title;
+        img.className = 'cover-img';
+        
+        // 图片加载失败时的后备：显示带编号的纯色图
+        img.onerror = function(e) {
+          e.target.src = `data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%2290%22%20viewBox%3D%220%200%20160%2090%22%3E%3Crect%20width%3D%22160%22%20height%3D%2290%22%20fill%3D%22%23333333%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2255%22%20fill%3D%22%23ffd966%22%20font-size%3D%2236%22%3E%23${i}%3C%2Ftext%3E%3C%2Fsvg%3E`;
+        };
+
+        link.appendChild(img);
+        card.appendChild(link);
+
+        // 视频标题 (每段视频单独)
+        const titleSpan = document.createElement('span');
+        titleSpan.className = 'video-title';
+        titleSpan.textContent = title;
+        card.appendChild(titleSpan);
+
+        videoGrid.appendChild(card);
+      }
+
+      // logo点击仅刷新当前页面 (保持在展厅)
+      // 使用 javascript:void(0) 更好？但已经用 href="javascript:window.location.href=..."
+      // 已经实现
+    })();
+  </script>
+
+  <noscript>
+    <div style="background:black; color:#ffd966; padding:20px; text-align:center;">
+      您的浏览器未支持JavaScript，请升级或启用JS以查看完整展厅。<br>
+      <a href="https://cdn.mtdv.me/video/rick.mp4" style="color:#ffd966;">直接访问视频</a>
+    </div>
+  </noscript>
 </body>
 </html>
